@@ -4,13 +4,14 @@
 #
 Name     : cairo
 Version  : 1.16.0
-Release  : 71
+Release  : 72
 URL      : https://www.cairographics.org/releases/cairo-1.16.0.tar.xz
 Source0  : https://www.cairographics.org/releases/cairo-1.16.0.tar.xz
 Summary  : Multi-platform 2D graphics library
 Group    : Development/Tools
 License  : GPL-2.0 GPL-3.0 LGPL-2.0 LGPL-2.1 MIT MPL-1.1
 Requires: cairo-bin = %{version}-%{release}
+Requires: cairo-filemap = %{version}-%{release}
 Requires: cairo-lib = %{version}-%{release}
 Requires: cairo-license = %{version}-%{release}
 BuildRequires : docbook-xml
@@ -53,6 +54,7 @@ include OpenGL, BeOS, OS/2, and DirectFB.
 Summary: bin components for the cairo package.
 Group: Binaries
 Requires: cairo-license = %{version}-%{release}
+Requires: cairo-filemap = %{version}-%{release}
 
 %description bin
 bin components for the cairo package.
@@ -78,10 +80,19 @@ Group: Documentation
 doc components for the cairo package.
 
 
+%package filemap
+Summary: filemap components for the cairo package.
+Group: Default
+
+%description filemap
+filemap components for the cairo package.
+
+
 %package lib
 Summary: lib components for the cairo package.
 Group: Libraries
 Requires: cairo-license = %{version}-%{release}
+Requires: cairo-filemap = %{version}-%{release}
 
 %description lib
 lib components for the cairo package.
@@ -102,26 +113,39 @@ cd %{_builddir}/cairo-1.16.0
 %patch2 -p1
 %patch3 -p1
 %patch4 -p1
+pushd ..
+cp -a cairo-1.16.0 buildavx2
+popd
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1600296481
+export SOURCE_DATE_EPOCH=1634131593
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -falign-functions=32 -ffat-lto-objects -flto=4 -fno-math-errno -fno-semantic-interposition -fno-trapping-math -fstack-protector-strong -fzero-call-used-regs=used "
-export FCFLAGS="$FFLAGS -O3 -falign-functions=32 -ffat-lto-objects -flto=4 -fno-math-errno -fno-semantic-interposition -fno-trapping-math -fstack-protector-strong -fzero-call-used-regs=used "
-export FFLAGS="$FFLAGS -O3 -falign-functions=32 -ffat-lto-objects -flto=4 -fno-math-errno -fno-semantic-interposition -fno-trapping-math -fstack-protector-strong -fzero-call-used-regs=used "
-export CXXFLAGS="$CXXFLAGS -O3 -falign-functions=32 -ffat-lto-objects -flto=4 -fno-math-errno -fno-semantic-interposition -fno-trapping-math -fstack-protector-strong -fzero-call-used-regs=used "
+export CFLAGS="$CFLAGS -O3 -Ofast -falign-functions=32 -ffat-lto-objects -flto=auto -fno-semantic-interposition -fstack-protector-strong -fzero-call-used-regs=used -mno-vzeroupper -mprefer-vector-width=256 "
+export FCFLAGS="$FFLAGS -O3 -Ofast -falign-functions=32 -ffat-lto-objects -flto=auto -fno-semantic-interposition -fstack-protector-strong -fzero-call-used-regs=used -mno-vzeroupper -mprefer-vector-width=256 "
+export FFLAGS="$FFLAGS -O3 -Ofast -falign-functions=32 -ffat-lto-objects -flto=auto -fno-semantic-interposition -fstack-protector-strong -fzero-call-used-regs=used -mno-vzeroupper -mprefer-vector-width=256 "
+export CXXFLAGS="$CXXFLAGS -O3 -Ofast -falign-functions=32 -ffat-lto-objects -flto=auto -fno-semantic-interposition -fstack-protector-strong -fzero-call-used-regs=used -mno-vzeroupper -mprefer-vector-width=256 "
 %configure --disable-static --disable-gtk-doc --enable-xlib=yes --enable-xcb=yes --enable-ft=yes --enable-fc=yes --enable-gl --enable-xlib-xcb
 make  %{?_smp_mflags}
 
+unset PKG_CONFIG_PATH
+pushd ../buildavx2/
+export CFLAGS="$CFLAGS -m64 -march=x86-64-v3"
+export CXXFLAGS="$CXXFLAGS -m64 -march=x86-64-v3"
+export FFLAGS="$FFLAGS -m64 -march=x86-64-v3"
+export FCFLAGS="$FCFLAGS -m64 -march=x86-64-v3"
+export LDFLAGS="$LDFLAGS -m64 -march=x86-64-v3"
+%configure --disable-static --disable-gtk-doc --enable-xlib=yes --enable-xcb=yes --enable-ft=yes --enable-fc=yes --enable-gl --enable-xlib-xcb
+make  %{?_smp_mflags}
+popd
 %install
-export SOURCE_DATE_EPOCH=1600296481
+export SOURCE_DATE_EPOCH=1634131593
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/cairo
 cp %{_builddir}/cairo-1.16.0/COPYING-LGPL-2.1 %{buildroot}/usr/share/package-licenses/cairo/8088b44375ef05202c0fca4e9e82d47591563609
@@ -132,7 +156,11 @@ cp %{_builddir}/cairo-1.16.0/test/pdiff/gpl.txt %{buildroot}/usr/share/package-l
 cp %{_builddir}/cairo-1.16.0/util/cairo-script/COPYING %{buildroot}/usr/share/package-licenses/cairo/d888f729a340181e37b0b2fb25c2942d5005e6a2
 cp %{_builddir}/cairo-1.16.0/util/cairo-trace/COPYING %{buildroot}/usr/share/package-licenses/cairo/0315f8fa18770a489890f8448111722aca24b8ec
 cp %{_builddir}/cairo-1.16.0/util/cairo-trace/COPYING-GPL-3 %{buildroot}/usr/share/package-licenses/cairo/8624bcdae55baeef00cd11d5dfcfa60f68710a02
+pushd ../buildavx2/
+%make_install_v3
+popd
 %make_install
+/usr/bin/elf-move.py avx2 %{buildroot}-v3 %{buildroot}/usr/share/clear/optimized-elf/ %{buildroot}/usr/share/clear/filemap/filemap-%{name}
 
 %files
 %defattr(-,root,root,-)
@@ -248,6 +276,10 @@ cp %{_builddir}/cairo-1.16.0/util/cairo-trace/COPYING-GPL-3 %{buildroot}/usr/sha
 /usr/share/gtk-doc/html/cairo/up-insensitive.png
 /usr/share/gtk-doc/html/cairo/up.png
 
+%files filemap
+%defattr(-,root,root,-)
+/usr/share/clear/filemap/filemap-cairo
+
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/cairo/libcairo-trace.so
@@ -257,6 +289,7 @@ cp %{_builddir}/cairo-1.16.0/util/cairo-trace/COPYING-GPL-3 %{buildroot}/usr/sha
 /usr/lib64/libcairo-script-interpreter.so.2.11600.0
 /usr/lib64/libcairo.so.2
 /usr/lib64/libcairo.so.2.11600.0
+/usr/share/clear/optimized-elf/lib*
 
 %files license
 %defattr(0644,root,root,0755)

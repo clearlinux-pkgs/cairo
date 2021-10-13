@@ -1,40 +1,80 @@
-Configure miss: whether gcc supports -errwarn
+Configure miss: ApplicationServices/ApplicationServices.h
+Configure miss: ApplicationServices/ApplicationServices.h
+Configure miss: ApplicationServices/ApplicationServices.h presence
+Configure miss: ApplicationServices/ApplicationServices.h presence
+Configure miss: ApplicationServices/ApplicationServices.h usability
+Configure miss: ApplicationServices/ApplicationServices.h usability
+Configure miss: CoreGraphics/CoreGraphics.h
+Configure miss: CoreGraphics/CoreGraphics.h
+Configure miss: CoreGraphics/CoreGraphics.h presence
+Configure miss: CoreGraphics/CoreGraphics.h presence
+Configure miss: CoreGraphics/CoreGraphics.h usability
+Configure miss: CoreGraphics/CoreGraphics.h usability
+Configure miss: LIBRSVG
+Configure miss: LIBRSVG
+Configure miss: POPPLER
+Configure miss: POPPLER
+Configure miss: Sun Solaris (non-POSIX ctime_r)
+Configure miss: Sun Solaris (non-POSIX ctime_r)
+Configure miss: bfd.h
+Configure miss: bfd.h
+Configure miss: bfd.h presence
+Configure miss: bfd.h presence
+Configure miss: bfd.h usability
+Configure miss: bfd.h usability
+Configure miss: connect in -lsocket
+Configure miss: connect in -lsocket
+Configure miss: gs
+Configure miss: gs
+Configure miss: gtk
+Configure miss: gtk
+Configure miss: libiberty.h
+Configure miss: libiberty.h
+Configure miss: libiberty.h presence
+Configure miss: libiberty.h presence
+Configure miss: libiberty.h usability
+Configure miss: libiberty.h usability
+Configure miss: lockdep.h
+Configure miss: lockdep.h
+Configure miss: lockdep.h presence
+Configure miss: lockdep.h presence
+Configure miss: lockdep.h usability
+Configure miss: lockdep.h usability
+Configure miss: lzo2a_decompress in -llzo2
+Configure miss: lzo2a_decompress in -llzo2
+Configure miss: memfault.h
+Configure miss: memfault.h
+Configure miss: memfault.h presence
+Configure miss: memfault.h presence
+Configure miss: memfault.h usability
+Configure miss: memfault.h usability
+Configure miss: sys/int_types.h
+Configure miss: sys/int_types.h
+Configure miss: sys/int_types.h presence
+Configure miss: sys/int_types.h presence
+Configure miss: sys/int_types.h usability
+Configure miss: sys/int_types.h usability
+Configure miss: uint128_t
+Configure miss: uint128_t
+Configure miss: whether atomic ops require a memory barrier
+Configure miss: whether atomic ops require a memory barrier
+Configure miss: whether cairo's Microsoft Windows font backend feature could be enabled
+Configure miss: whether cairo's Microsoft Windows font backend feature could be enabled
+Configure miss: whether cairo's Microsoft Windows surface backend feature could be enabled
+Configure miss: whether cairo's Microsoft Windows surface backend feature could be enabled
+Configure miss: whether cairo's Quartz font backend feature could be enabled
+Configure miss: whether cairo's Quartz font backend feature could be enabled
+Configure miss: whether cairo's Quartz surface backend feature could be enabled
+Configure miss: whether cairo's Quartz surface backend feature could be enabled
+Configure miss: whether cairo's WGL functions feature could be enabled
+Configure miss: whether cairo's WGL functions feature could be enabled
+Configure miss: whether cairo's symbol-lookup feature could be enabled
+Configure miss: whether cairo's symbol-lookup feature could be enabled
+Configure miss: whether float word ordering is bigendian
+Configure miss: whether float word ordering is bigendian
+Configure miss: whether gcc supports -erroff=E_ENUM_TYPE_MISMATCH_ARG
 Configure miss: whether gcc supports -erroff=E_ENUM_TYPE_MISMATCH_ARG
 Configure miss: whether gcc supports -erroff=E_ENUM_TYPE_MISMATCH_OP
-Configure miss: whether float word ordering is bigendian
-Configure miss: whether atomic ops require a memory barrier
-Configure miss: Sun Solaris (non-POSIX ctime_r)
-Configure miss: connect in -lsocket
-Configure miss: sys/int_types.h usability
-Configure miss: sys/int_types.h presence
-Configure miss: sys/int_types.h
-Configure miss: uint128_t
-Configure miss: lockdep.h usability
-Configure miss: lockdep.h presence
-Configure miss: lockdep.h
-Configure miss: memfault.h usability
-Configure miss: memfault.h presence
-Configure miss: memfault.h
-Configure miss: lzo2a_decompress in -llzo2
-Configure miss: ApplicationServices/ApplicationServices.h usability
-Configure miss: ApplicationServices/ApplicationServices.h presence
-Configure miss: ApplicationServices/ApplicationServices.h
-Configure miss: CoreGraphics/CoreGraphics.h usability
-Configure miss: CoreGraphics/CoreGraphics.h presence
-Configure miss: CoreGraphics/CoreGraphics.h
-Configure miss: whether cairo's Quartz surface backend feature could be enabled
-Configure miss: whether cairo's Quartz font backend feature could be enabled
-Configure miss: whether cairo's Microsoft Windows surface backend feature could be enabled
-Configure miss: whether cairo's Microsoft Windows font backend feature could be enabled
-Configure miss: whether cairo's WGL functions feature could be enabled
-Configure miss: gs
-Configure miss: POPPLER
-Configure miss: LIBRSVG
-Configure miss: bfd.h usability
-Configure miss: bfd.h presence
-Configure miss: bfd.h
-Configure miss: libiberty.h usability
-Configure miss: libiberty.h presence
-Configure miss: libiberty.h
-Configure miss: whether cairo's symbol-lookup feature could be enabled
-Configure miss: gtk
+Configure miss: whether gcc supports -erroff=E_ENUM_TYPE_MISMATCH_OP
+Configure miss: whether gcc supports -errwarn
+Configure miss: whether gcc supports -errwarn
