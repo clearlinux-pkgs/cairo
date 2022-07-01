@@ -13,6 +13,7 @@ Configure miss: CoreGraphics/CoreGraphics.h usability
 Configure miss: LIBRSVG
 Configure miss: LIBRSVG
 Configure miss: LIBSPECTRE
+Configure miss: LIBSPECTRE
 Configure miss: POPPLER
 Configure miss: POPPLER
 Configure miss: Sun Solaris (non-POSIX ctime_r)
