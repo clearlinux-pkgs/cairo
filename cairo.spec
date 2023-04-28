@@ -5,7 +5,7 @@
 #
 Name     : cairo
 Version  : 1.16.0
-Release  : 86
+Release  : 87
 URL      : https://www.cairographics.org/releases/cairo-1.16.0.tar.xz
 Source0  : https://www.cairographics.org/releases/cairo-1.16.0.tar.xz
 Summary  : Multi-platform 2D graphics library
@@ -116,7 +116,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1682646611
+export SOURCE_DATE_EPOCH=1682702366
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -139,7 +139,7 @@ export LDFLAGS="$LDFLAGS -m64 -march=x86-64-v3"
 make  %{?_smp_mflags}
 popd
 %install
-export SOURCE_DATE_EPOCH=1682646611
+export SOURCE_DATE_EPOCH=1682702366
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/cairo
 cp %{_builddir}/cairo-%{version}/COPYING-LGPL-2.1 %{buildroot}/usr/share/package-licenses/cairo/8088b44375ef05202c0fca4e9e82d47591563609 || :
@@ -158,7 +158,6 @@ popd
 
 %files
 %defattr(-,root,root,-)
-/V3/usr/lib64/cairo/libcairo-trace.so
 
 %files bin
 %defattr(-,root,root,-)
@@ -166,6 +165,9 @@ popd
 
 %files dev
 %defattr(-,root,root,-)
+/V3/usr/lib64/libcairo-gobject.so
+/V3/usr/lib64/libcairo-script-interpreter.so
+/V3/usr/lib64/libcairo.so
 /usr/include/cairo/cairo-deprecated.h
 /usr/include/cairo/cairo-features.h
 /usr/include/cairo/cairo-ft.h
@@ -180,9 +182,6 @@ popd
 /usr/include/cairo/cairo-xlib-xrender.h
 /usr/include/cairo/cairo-xlib.h
 /usr/include/cairo/cairo.h
-/usr/lib64/glibc-hwcaps/x86-64-v3/libcairo-gobject.so
-/usr/lib64/glibc-hwcaps/x86-64-v3/libcairo-script-interpreter.so
-/usr/lib64/glibc-hwcaps/x86-64-v3/libcairo.so
 /usr/lib64/libcairo-gobject.so
 /usr/lib64/libcairo-script-interpreter.so
 /usr/lib64/libcairo.so
@@ -272,13 +271,14 @@ popd
 
 %files lib
 %defattr(-,root,root,-)
+/V3/usr/lib64/cairo/libcairo-trace.so
+/V3/usr/lib64/libcairo-gobject.so.2
+/V3/usr/lib64/libcairo-gobject.so.2.11600.0
+/V3/usr/lib64/libcairo-script-interpreter.so.2
+/V3/usr/lib64/libcairo-script-interpreter.so.2.11600.0
+/V3/usr/lib64/libcairo.so.2
+/V3/usr/lib64/libcairo.so.2.11600.0
 /usr/lib64/cairo/libcairo-trace.so
-/usr/lib64/glibc-hwcaps/x86-64-v3/libcairo-gobject.so.2
-/usr/lib64/glibc-hwcaps/x86-64-v3/libcairo-gobject.so.2.11600.0
-/usr/lib64/glibc-hwcaps/x86-64-v3/libcairo-script-interpreter.so.2
-/usr/lib64/glibc-hwcaps/x86-64-v3/libcairo-script-interpreter.so.2.11600.0
-/usr/lib64/glibc-hwcaps/x86-64-v3/libcairo.so.2
-/usr/lib64/glibc-hwcaps/x86-64-v3/libcairo.so.2.11600.0
 /usr/lib64/libcairo-gobject.so.2
 /usr/lib64/libcairo-gobject.so.2.11600.0
 /usr/lib64/libcairo-script-interpreter.so.2
