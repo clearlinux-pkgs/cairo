@@ -1,2 +1,6 @@
-1.16.0
-pkg-config
+1.17.8
+gtk+-dev
+pkgconfig(gtk+-2.0)
+pkgconfig(libspectre)
+pkgconfig(lzo2)
+pkgconfig(poppler-glib)

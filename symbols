@@ -31,7 +31,6 @@ libcairo-gobject.so.2:cairo_gobject_subpixel_order_get_type
 libcairo-gobject.so.2:cairo_gobject_surface_get_type
 libcairo-gobject.so.2:cairo_gobject_surface_type_get_type
 libcairo-gobject.so.2:cairo_gobject_text_cluster_flags_get_type
-libcairo-script-interpreter.so.2:_csi_stack_push
 libcairo-script-interpreter.so.2:cairo_script_interpreter_create
 libcairo-script-interpreter.so.2:cairo_script_interpreter_destroy
 libcairo-script-interpreter.so.2:cairo_script_interpreter_feed_stream
@@ -93,6 +92,9 @@ libcairo.so.2:cairo_font_options_create
 libcairo.so.2:cairo_font_options_destroy
 libcairo.so.2:cairo_font_options_equal
 libcairo.so.2:cairo_font_options_get_antialias
+libcairo.so.2:cairo_font_options_get_color_mode
+libcairo.so.2:cairo_font_options_get_color_palette
+libcairo.so.2:cairo_font_options_get_custom_palette_color
 libcairo.so.2:cairo_font_options_get_hint_metrics
 libcairo.so.2:cairo_font_options_get_hint_style
 libcairo.so.2:cairo_font_options_get_subpixel_order
@@ -100,6 +102,9 @@ libcairo.so.2:cairo_font_options_get_variations
 libcairo.so.2:cairo_font_options_hash
 libcairo.so.2:cairo_font_options_merge
 libcairo.so.2:cairo_font_options_set_antialias
+libcairo.so.2:cairo_font_options_set_color_mode
+libcairo.so.2:cairo_font_options_set_color_palette
+libcairo.so.2:cairo_font_options_set_custom_palette_color
 libcairo.so.2:cairo_font_options_set_hint_metrics
 libcairo.so.2:cairo_font_options_set_hint_style
 libcairo.so.2:cairo_font_options_set_subpixel_order
@@ -123,6 +128,7 @@ libcairo.so.2:cairo_get_font_face
 libcairo.so.2:cairo_get_font_matrix
 libcairo.so.2:cairo_get_font_options
 libcairo.so.2:cairo_get_group_target
+libcairo.so.2:cairo_get_hairline
 libcairo.so.2:cairo_get_line_cap
 libcairo.so.2:cairo_get_line_join
 libcairo.so.2:cairo_get_line_width
@@ -220,6 +226,7 @@ libcairo.so.2:cairo_pdf_surface_add_outline
 libcairo.so.2:cairo_pdf_surface_create
 libcairo.so.2:cairo_pdf_surface_create_for_stream
 libcairo.so.2:cairo_pdf_surface_restrict_to_version
+libcairo.so.2:cairo_pdf_surface_set_custom_metadata
 libcairo.so.2:cairo_pdf_surface_set_metadata
 libcairo.so.2:cairo_pdf_surface_set_page_label
 libcairo.so.2:cairo_pdf_surface_set_size
@@ -320,6 +327,7 @@ libcairo.so.2:cairo_set_font_face
 libcairo.so.2:cairo_set_font_matrix
 libcairo.so.2:cairo_set_font_options
 libcairo.so.2:cairo_set_font_size
+libcairo.so.2:cairo_set_hairline
 libcairo.so.2:cairo_set_line_cap
 libcairo.so.2:cairo_set_line_join
 libcairo.so.2:cairo_set_line_width
@@ -406,13 +414,17 @@ libcairo.so.2:cairo_transform
 libcairo.so.2:cairo_translate
 libcairo.so.2:cairo_user_font_face_create
 libcairo.so.2:cairo_user_font_face_get_init_func
+libcairo.so.2:cairo_user_font_face_get_render_color_glyph_func
 libcairo.so.2:cairo_user_font_face_get_render_glyph_func
 libcairo.so.2:cairo_user_font_face_get_text_to_glyphs_func
 libcairo.so.2:cairo_user_font_face_get_unicode_to_glyph_func
 libcairo.so.2:cairo_user_font_face_set_init_func
+libcairo.so.2:cairo_user_font_face_set_render_color_glyph_func
 libcairo.so.2:cairo_user_font_face_set_render_glyph_func
 libcairo.so.2:cairo_user_font_face_set_text_to_glyphs_func
 libcairo.so.2:cairo_user_font_face_set_unicode_to_glyph_func
+libcairo.so.2:cairo_user_scaled_font_get_foreground_marker
+libcairo.so.2:cairo_user_scaled_font_get_foreground_source
 libcairo.so.2:cairo_user_to_device
 libcairo.so.2:cairo_user_to_device_distance
 libcairo.so.2:cairo_version

@@ -1,3 +1,0 @@
---disable-gtk-doc --enable-xlib=yes --enable-xcb=yes --enable-ft=yes --enable-fc=yes --disable-gl --enable-xlib-xcb
-
-
