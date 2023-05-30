@@ -5,7 +5,7 @@
 #
 Name     : cairo
 Version  : 1.17.8
-Release  : 88
+Release  : 89
 URL      : https://gitlab.freedesktop.org/cairo/cairo/-/archive/1.17.8/cairo-1.17.8.tar.bz2
 Source0  : https://gitlab.freedesktop.org/cairo/cairo/-/archive/1.17.8/cairo-1.17.8.tar.bz2
 Summary  : script surface backend for cairo graphics library
@@ -93,7 +93,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1683391363
+export SOURCE_DATE_EPOCH=1685486375
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -130,9 +130,6 @@ DESTDIR=%{buildroot} ninja -C builddir install
 
 %files dev
 %defattr(-,root,root,-)
-/V3/usr/lib64/libcairo-gobject.so
-/V3/usr/lib64/libcairo-script-interpreter.so
-/V3/usr/lib64/libcairo.so
 /usr/include/cairo/cairo-deprecated.h
 /usr/include/cairo/cairo-features.h
 /usr/include/cairo/cairo-ft.h
@@ -168,11 +165,8 @@ DESTDIR=%{buildroot} ninja -C builddir install
 %files lib
 %defattr(-,root,root,-)
 /V3/usr/lib64/cairo/libcairo-trace.so
-/V3/usr/lib64/libcairo-gobject.so.2
 /V3/usr/lib64/libcairo-gobject.so.2.11708.0
-/V3/usr/lib64/libcairo-script-interpreter.so.2
 /V3/usr/lib64/libcairo-script-interpreter.so.2.11708.0
-/V3/usr/lib64/libcairo.so.2
 /V3/usr/lib64/libcairo.so.2.11708.0
 /usr/lib64/cairo/libcairo-trace.so
 /usr/lib64/libcairo-gobject.so.2
