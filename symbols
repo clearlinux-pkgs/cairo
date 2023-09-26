@@ -12,6 +12,7 @@ libcairo-gobject.so.2:cairo_gobject_font_slant_get_type
 libcairo-gobject.so.2:cairo_gobject_font_type_get_type
 libcairo-gobject.so.2:cairo_gobject_font_weight_get_type
 libcairo-gobject.so.2:cairo_gobject_format_get_type
+libcairo-gobject.so.2:cairo_gobject_glyph_get_type
 libcairo-gobject.so.2:cairo_gobject_hint_metrics_get_type
 libcairo-gobject.so.2:cairo_gobject_hint_style_get_type
 libcairo-gobject.so.2:cairo_gobject_line_cap_get_type
@@ -31,6 +32,7 @@ libcairo-gobject.so.2:cairo_gobject_subpixel_order_get_type
 libcairo-gobject.so.2:cairo_gobject_surface_get_type
 libcairo-gobject.so.2:cairo_gobject_surface_type_get_type
 libcairo-gobject.so.2:cairo_gobject_text_cluster_flags_get_type
+libcairo-gobject.so.2:cairo_gobject_text_cluster_get_type
 libcairo-script-interpreter.so.2:cairo_script_interpreter_create
 libcairo-script-interpreter.so.2:cairo_script_interpreter_destroy
 libcairo-script-interpreter.so.2:cairo_script_interpreter_feed_stream
@@ -205,6 +207,7 @@ libcairo.so.2:cairo_pattern_create_rgba
 libcairo.so.2:cairo_pattern_destroy
 libcairo.so.2:cairo_pattern_get_color_stop_count
 libcairo.so.2:cairo_pattern_get_color_stop_rgba
+libcairo.so.2:cairo_pattern_get_dither
 libcairo.so.2:cairo_pattern_get_extend
 libcairo.so.2:cairo_pattern_get_filter
 libcairo.so.2:cairo_pattern_get_linear_points
@@ -216,6 +219,7 @@ libcairo.so.2:cairo_pattern_get_surface
 libcairo.so.2:cairo_pattern_get_type
 libcairo.so.2:cairo_pattern_get_user_data
 libcairo.so.2:cairo_pattern_reference
+libcairo.so.2:cairo_pattern_set_dither
 libcairo.so.2:cairo_pattern_set_extend
 libcairo.so.2:cairo_pattern_set_filter
 libcairo.so.2:cairo_pattern_set_matrix
@@ -402,6 +406,10 @@ libcairo.so.2:cairo_svg_surface_set_document_unit
 libcairo.so.2:cairo_svg_version_to_string
 libcairo.so.2:cairo_tag_begin
 libcairo.so.2:cairo_tag_end
+libcairo.so.2:cairo_tee_surface_add
+libcairo.so.2:cairo_tee_surface_create
+libcairo.so.2:cairo_tee_surface_index
+libcairo.so.2:cairo_tee_surface_remove
 libcairo.so.2:cairo_text_cluster_allocate
 libcairo.so.2:cairo_text_cluster_free
 libcairo.so.2:cairo_text_extents

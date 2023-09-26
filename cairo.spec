@@ -4,10 +4,10 @@
 # Using build pattern: meson
 #
 Name     : cairo
-Version  : 1.17.8
-Release  : 89
-URL      : https://gitlab.freedesktop.org/cairo/cairo/-/archive/1.17.8/cairo-1.17.8.tar.bz2
-Source0  : https://gitlab.freedesktop.org/cairo/cairo/-/archive/1.17.8/cairo-1.17.8.tar.bz2
+Version  : 1.18.0
+Release  : 90
+URL      : https://gitlab.freedesktop.org/cairo/cairo/-/archive/1.18.0/cairo-1.18.0.tar.gz
+Source0  : https://gitlab.freedesktop.org/cairo/cairo/-/archive/1.18.0/cairo-1.18.0.tar.gz
 Summary  : script surface backend for cairo graphics library
 Group    : Development/Tools
 License  : GPL-2.0 GPL-3.0 LGPL-2.0 LGPL-2.1 MIT MPL-1.1
@@ -26,7 +26,6 @@ BuildRequires : pkgconfig(fontconfig)
 BuildRequires : pkgconfig(gtk+-2.0)
 BuildRequires : pkgconfig(ice)
 BuildRequires : pkgconfig(libspectre)
-BuildRequires : pkgconfig(lzo2)
 BuildRequires : pkgconfig(pixman-1)
 BuildRequires : pkgconfig(poppler-glib)
 BuildRequires : pkgconfig(x11)
@@ -81,11 +80,11 @@ license components for the cairo package.
 
 
 %prep
-%setup -q -n cairo-1.17.8
-cd %{_builddir}/cairo-1.17.8
-%patch1 -p1
+%setup -q -n cairo-1.18.0
+cd %{_builddir}/cairo-1.18.0
+%patch -P 1 -p1
 pushd ..
-cp -a cairo-1.17.8 buildavx2
+cp -a cairo-1.18.0 buildavx2
 popd
 
 %build
@@ -93,7 +92,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1685486375
+export SOURCE_DATE_EPOCH=1695746169
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -139,6 +138,7 @@ DESTDIR=%{buildroot} ninja -C builddir install
 /usr/include/cairo/cairo-script-interpreter.h
 /usr/include/cairo/cairo-script.h
 /usr/include/cairo/cairo-svg.h
+/usr/include/cairo/cairo-tee.h
 /usr/include/cairo/cairo-version.h
 /usr/include/cairo/cairo-xcb.h
 /usr/include/cairo/cairo-xlib-xrender.h
@@ -156,6 +156,7 @@ DESTDIR=%{buildroot} ninja -C builddir install
 /usr/lib64/pkgconfig/cairo-script-interpreter.pc
 /usr/lib64/pkgconfig/cairo-script.pc
 /usr/lib64/pkgconfig/cairo-svg.pc
+/usr/lib64/pkgconfig/cairo-tee.pc
 /usr/lib64/pkgconfig/cairo-xcb-shm.pc
 /usr/lib64/pkgconfig/cairo-xcb.pc
 /usr/lib64/pkgconfig/cairo-xlib-xrender.pc
@@ -164,17 +165,19 @@ DESTDIR=%{buildroot} ninja -C builddir install
 
 %files lib
 %defattr(-,root,root,-)
+/V3/usr/lib64/cairo/libcairo-fdr.so
 /V3/usr/lib64/cairo/libcairo-trace.so
-/V3/usr/lib64/libcairo-gobject.so.2.11708.0
-/V3/usr/lib64/libcairo-script-interpreter.so.2.11708.0
-/V3/usr/lib64/libcairo.so.2.11708.0
+/V3/usr/lib64/libcairo-gobject.so.2.11800.0
+/V3/usr/lib64/libcairo-script-interpreter.so.2.11800.0
+/V3/usr/lib64/libcairo.so.2.11800.0
+/usr/lib64/cairo/libcairo-fdr.so
 /usr/lib64/cairo/libcairo-trace.so
 /usr/lib64/libcairo-gobject.so.2
-/usr/lib64/libcairo-gobject.so.2.11708.0
+/usr/lib64/libcairo-gobject.so.2.11800.0
 /usr/lib64/libcairo-script-interpreter.so.2
-/usr/lib64/libcairo-script-interpreter.so.2.11708.0
+/usr/lib64/libcairo-script-interpreter.so.2.11800.0
 /usr/lib64/libcairo.so.2
-/usr/lib64/libcairo.so.2.11708.0
+/usr/lib64/libcairo.so.2.11800.0
 
 %files license
 %defattr(0644,root,root,0755)

@@ -1,6 +1,5 @@
-1.17.8
+1.18.0
 gtk+-dev
 pkgconfig(gtk+-2.0)
 pkgconfig(libspectre)
-pkgconfig(lzo2)
 pkgconfig(poppler-glib)
