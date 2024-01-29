@@ -5,7 +5,7 @@
 #
 Name     : cairo
 Version  : 1.18.0
-Release  : 91
+Release  : 92
 URL      : https://gitlab.freedesktop.org/cairo/cairo/-/archive/1.18.0/cairo-1.18.0.tar.gz
 Source0  : https://gitlab.freedesktop.org/cairo/cairo/-/archive/1.18.0/cairo-1.18.0.tar.gz
 Summary  : script surface backend for cairo graphics library
